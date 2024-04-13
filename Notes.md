@@ -114,3 +114,4 @@ console.log(pathname); // basically, i am able to access the path name ( the url
 
 
 ```
+
