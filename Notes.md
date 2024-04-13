@@ -90,3 +90,27 @@ const MenuLink = ({ title, path, icon}) => {
 
 ```
 ````
+
+## Simple Path Name Access
+
+```js
+import { usePathname } from "next/navigation"; // next import
+
+const pathname = usePathname(); //  require "use Client"
+
+console.log(pathname); // basically, i am able to access the path name ( the url ).
+
+//  Log result dashboard/products
+
+<div className={styles.container}>{pathname.split("/").pop}</div>;
+// retuns only the "products" from  dashboard/products
+```
+
+## Active Classname link
+
+```js
+
+ <Link className={` ${styles.container} ${pathname === path && "active"}`} href={path}>
+
+
+```
