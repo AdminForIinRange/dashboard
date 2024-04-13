@@ -13,6 +13,7 @@ import {
   MdLogout,
 } from "react-icons/md";
 import MenuLink from "./menuLink/menuLink";
+import Image from "next/image";
 
 const Sidebar = () => {
   const menuItems = [
@@ -80,6 +81,8 @@ const Sidebar = () => {
 
   return (
     <div className={styles.container}>
+        <div className={styles.user}></div>
+        <Image src="/user.png" width={50} height={50} alt="logo" />
       {menuItems.map(({ title, list }) => (
         <li key={title}>
           <span className={styles.cat} >{title}</span>

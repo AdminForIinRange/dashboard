@@ -3,7 +3,7 @@ import React from 'react'
 
 const MenuLink = ({ title, path, icon}) => {
   return (
-    <Link >MenuLink</Link>
+    <Link>MenuLink</Link>
   )
 }
 
