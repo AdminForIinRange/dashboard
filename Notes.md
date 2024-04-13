@@ -1,23 +1,28 @@
 # Accreting my Next.js journey  
 
-Tying to understand teh project, beaucse i do nto 100% get what hes trying to do so i have to fill in teh gaps nad keep note on what he dose 
+Trying to understand the project, because I do not 100% get what he's trying to do, so I have to fill in the gaps and keep note on what he does.
 
+### Recommended folder structure from Docs's "Apparently" That means everything he's doing is 100% by the book and I should follow this file structure, but he also taught me the file structure in his previous 5-hour project and it was different, and it didn't contain UI nor did we have to import global CSS from UI.
 
-
+## Hates about this Tut
+- He create to much files outright. making teh dir messy right of the bat.
 
 ## Odd File setup
 ![File Structure](image.png)
-- crating a comp file and within that file creating, a layout is odd, but lets see what he dose.
-- I have never heard of a fale being named UI and being place din the app routure as if it were a page, but its not it holds a nother dashboard file and navbar, i think its beue of how th overall dash baord file is set up,
--so i think this dashbaored file is teh acutal dashbord and teh other one is jeuict the route taht holds this page
+- Creating a comp file and within that file creating a layout is odd, but let's see what he does.
+- I have never heard of a file being named UI and being placed in the app route as if it were a page, but it's not; it holds another dashboard file and navbar, I think it's because of how the overall dashboard file is set up.
 
-## Naming convetion
- - naming conatvion is weird, but i think its great, in my last project i hasd a weird error when deploying in vercel beacuse of some weord naming trace issue i think so i reanmed my /Hero/Hero.js to /Hero/HeroPage.jsx
+## Naming convention
+- Naming convention is weird, but I think it's great. In my last project, I had a weird error when deploying in Vercel because of some weird naming trace issue, I think so I renamed my /Hero/Hero.js to /Hero/HeroPage.jsx.
 
 ## Must be Page.jsx
 
-if its nto page js then teh code will not work,
-hower the const export has can be anything but it need sa capital word, common convetion state  Filename with a Capital Word + "page" in the end
+If it's not page.js then the code will not work.
+However, the const export can be anything but it needs a capital word, common convention states Filename with a Capital Word + "page" in the end.
 
-## Taking {{chlidren}} without Wraping 
+## Taking {{children}} without Wrapping 
  If you have a file structure where both the page and layout components reside in the same folder, and the layout component is designed to wrap its children, any page component imported and rendered within that layout component will automatically become a child of the layout.
+
+## CSS naming conventions
+
+its allways, name of file . "module" . css
