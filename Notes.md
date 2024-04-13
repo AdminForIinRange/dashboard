@@ -23,6 +23,19 @@ However, the const export can be anything but it needs a capital word, common co
 ## Taking {{children}} without Wrapping 
  If you have a file structure where both the page and layout components reside in the same folder, and the layout component is designed to wrap its children, any page component imported and rendered within that layout component will automatically become a child of the layout.
 
+
+## CSS conventions
+
+```js
+
+//  when naming teh file moduile, it spetres it form the css and you can name things like contrainer in serveal css modules without it conflicting.
+
+import styles from './sidebar.module.css' // here a the import dir and name
+
+<div className={styles.container}>Sidebar</div> // indavuialy impiorting the style as if it were a basic var import 
+
+```
+
 ## CSS naming conventions
 
 its allways, name of file . "module" . css
