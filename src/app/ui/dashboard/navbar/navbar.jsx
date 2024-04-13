@@ -4,7 +4,12 @@ import React from "react";
 import { usePathname } from "next/navigation";
 
 import styles from "./navbar.module.css";
-import { MdSearch } from "react-icons/md";
+import {
+  MdNotifications,
+  MdOutlineChat,
+  MdPublic,
+  MdSearch,
+} from "react-icons/md";
 const Navbar = () => {
   const pathname = usePathname();
 
@@ -15,8 +20,11 @@ const Navbar = () => {
         <div className={styles.search}>
           {" "}
           <MdSearch />
-          <input type="text" placeholder="Search..." />
+          <input className={styles.input} type="text" placeholder="Search..." />
         </div>
+        <MdOutlineChat size={20} />
+        <MdNotifications size={20} />
+        <MdPublic size={20} />
       </div>
     </div>
   );
