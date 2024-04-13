@@ -1,5 +1,6 @@
 # Accreting my Next.js journey  
 
+Tying to understand teh project, beaucse i do nto 100% get what hes trying to do so i have to fill in teh gaps nad keep note on what he dose 
 
 
 
