@@ -44,3 +44,23 @@ its allways, name of file . "module" . css
 ## UI folder in App Router replaces the Components folder convention
 
  The UI folder, as you described it, seems to serve as a container for all the UI elements, similar to a component folder in basic React setups. It's a common practice to organize UI-related components and styles separately from other parts of the application for better modularity and maintainability. This separation helps in managing and scaling the application as it grows, making it easier to locate and update UI elements independently. 
+
+
+
+## Maping Over ObjArry For Links
+ cool use of array obj, but i alredy know this
+ ```js  const menuItems = [
+        {
+          title: "Pages",
+          list: [
+            {
+              title: "Dashboard",
+              path: "/dashboard",
+              icon: <MdDashboard />,
+            },
+            {
+              title: "Users",
+              path: "/dashboard/users",
+              icon: <MdSupervisedUserCircle />,
+            }, ...
+            ```
