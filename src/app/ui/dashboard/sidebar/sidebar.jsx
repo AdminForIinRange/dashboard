@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import MenuLink from "./menuLink/menuLink";
 import Image from "next/image";
-
+import noAvater from "../../../public/noavatar.png"
 const Sidebar = () => {
   const menuItems = [
     {
@@ -82,12 +82,12 @@ const Sidebar = () => {
   return (
     <div className={styles.container}>
         <div className={styles.user}></div>
-        <Image src="/user.png" width={50} height={50} alt="logo" />
+        <Image src={noAvater} width={50} height={50} alt="logo" className={styles.userImage} />
       {menuItems.map(({ title, list }) => (
         <li key={title}>
           <span className={styles.cat} >{title}</span>
           {list.map(({ title, path, icon}) => (
-            <MenuLink key={title} title={title}  path={path} item={item} icon={icon}  />
+            <MenuLink key={title} title={title}  path={path} icon={icon}  />
           ))}
         </li>
 
