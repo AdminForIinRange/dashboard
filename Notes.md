@@ -13,5 +13,10 @@
 ## Naming convetion
  - naming conatvion is weird, but i think its great, in my last project i hasd a weird error when deploying in vercel beacuse of some weord naming trace issue i think so i reanmed my /Hero/Hero.js to /Hero/HeroPage.jsx
 
+## Must be Page.jsx
+
+if its nto page js then teh code will not work,
+hower the const export has can be anything but it need sa capital word, common convetion state  Filename with a Capital Word + "page" in the end
+
 ## Taking {{chlidren}} without Wraping 
  If you have a file structure where both the page and layout components reside in the same folder, and the layout component is designed to wrap its children, any page component imported and rendered within that layout component will automatically become a child of the layout.
