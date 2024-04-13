@@ -1,9 +1,20 @@
-import React from 'react'
+import React from "react";
+import Sidebar from "../ui/dashboard/sidebar/sidebar";
+import Dashboard from "./page";
+import Navbar from "../ui/dashboard/navbar/navbar";
 
-const Layout = ({children}) => {
+const Layout = ({ children }) => {
   return (
-    <div>Layout</div>
-  )
-}
+    <div>
+      <div>
+        <Sidebar />
+      </div>
+      <div>
+        <Navbar />
+        {children}
+      </div>
+    </div>
+  );
+};
 
-export default Layout
+export default Layout;
