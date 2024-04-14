@@ -8,7 +8,7 @@ import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
 
 const UsersPage = async () => {
-  // a chldiren element within dashbaord app route
+  // a chldiren element within dashbaord app route 
   const users = await fetchUsers()
   console.log(users)
 
