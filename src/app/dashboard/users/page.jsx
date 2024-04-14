@@ -2,7 +2,11 @@ import React from 'react'
 
 const UsersPage = () => { // a chldiren element within dashbaord app route
   return (
-    <div>UsersPage</div>
+    <div className={styles.container}>
+    <div className={styles.top}>
+      
+      </div>
+    </div>
   )
 }
 
