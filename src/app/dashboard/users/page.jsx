@@ -5,9 +5,13 @@ import Link from "next/link";
 import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
+import { fetchUsers } from "@/app/lib/data";
 
-const UsersPage = () => {
+const UsersPage = async () => {
   // a chldiren element within dashbaord app route
+  const users = await fetchUsers()
+  console.log(users)
+
   return (
     <div className={styles.container}>
       <div className={styles.top}>

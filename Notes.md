@@ -48,6 +48,11 @@ import styles from "./sidebar.module.css"; // here a the import dir and name
 
 its allways, name of file . "module" . css
 
+
+## Folder Placement conventions
+
+lib folder is inside of app, in the last video it wasnt, lib was outisde of app and it also had a componnets folder rather then a ui folder
+
 ## UI folder in App Router replaces the Components folder convention
 
 The UI folder, as you described it, seems to serve as a container for all the UI elements, similar to a component folder in basic React setups. It's a common practice to organize UI-related components and styles separately from other parts of the application for better modularity and maintainability. This separation helps in managing and scaling the application as it grows, making it easier to locate and update UI elements independently.
@@ -131,3 +136,8 @@ i have laready delt with recharts, because i have used it preveionly in trastcio
 ## using and Naming Slugs
 
 The square brackets around the folder name, e.g., [slug], tell Next.js that this is a dynamic route, and the content inside the brackets will be used as the route parameter. This allows you to create pages that can handle different URLs or "slugs" without having to define the routes manually. you can name the dynamic parameter inside the square brackets anything you want, such as [formId], [productSlug], [username], [slug] etc.
+
+## Password Issue
+
+every time you wnan use mongo create a new porject, thats not inveoled in yoru last project. when creating a  a new project your please est a password, you password is NOT bhattaraianjesh123  !!!!!!!!!!!!
+
