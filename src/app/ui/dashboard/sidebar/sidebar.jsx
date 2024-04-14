@@ -14,7 +14,7 @@ import {
 } from "react-icons/md";
 import MenuLink from "./menuLink/menuLink";
 import Image from "next/image";
-import noAvater from "../../../public/noavatar.png"
+import noAvater from "../../../public/noavatar.png";
 const Sidebar = () => {
   const menuItems = [
     {
@@ -81,26 +81,33 @@ const Sidebar = () => {
 
   return (
     <div className={styles.container}>
-        <div className={styles.user}> 
-        <Image src={noAvater} width={50} height={50} alt="logo" className={styles.userImage} />
+      <div className={styles.user}>
+        <Image
+          src={noAvater}
+          width={50}
+          height={50}
+          alt="logo"
+          className={styles.userImage}
+        />
         <div className={styles.userDetail}>
           <span className={styles.username}>John Doe</span>
           <span className={styles.userTitle}>Super Admin</span>
-          </div>
-
         </div>
-        <ul className={styles.list}> 
-      {menuItems.map(({ title, list }) => (
-        <li key={title}>
-          <span className={styles.cat} >{title}</span>
-          {list.map(({ title, path, icon}) => (
-            <MenuLink key={title} title={title}  path={path} icon={icon}  />
-          ))}
-        </li>
-
-      ))}
+      </div>
+      <ul className={styles.list}>
+        {menuItems.map(({ title, list }) => (
+          <li key={title}>
+            <span className={styles.cat}>{title}</span>
+            {list.map(({ title, path, icon }) => (
+              <MenuLink key={title} title={title} path={path} icon={icon} />
+            ))}
+          </li>
+        ))}
       </ul>
-      <button className={styles.logout}> <MdLogout /> Logout</button>
+      <button className={styles.logout}>
+        {" "}
+        <MdLogout /> Logout
+      </button>
     </div>
   );
 };

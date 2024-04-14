@@ -22,15 +22,16 @@
   margin-bottom: 30px;
 }
 
-.form input, .form select {
+.form input,
+.form select {
   width: 45%;
 }
 
-.form textarea{
+.form textarea {
   width: 100%;
 }
 
-.form button{
+.form button {
   width: 100%;
   padding: 30px;
   background-color: teal;

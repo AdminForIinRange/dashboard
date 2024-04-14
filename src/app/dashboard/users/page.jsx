@@ -8,9 +8,9 @@ import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
 
 const UsersPage = async () => {
-  // a chldiren element within dashbaord app route 
-  const users = await fetchUsers()
-  console.log(users)
+  // a chldiren element within dashbaord app route
+  const users = await fetchUsers();
+  console.log(users);
 
   return (
     <div className={styles.container}>
@@ -33,44 +33,42 @@ const UsersPage = async () => {
           </tr>
         </thead>
         <tbody>
-        
-            <tr >
-              <td>
-                <div className={styles.user}>
-                  <Image
-                    src={noAvater}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.userImage}
-                  />
-                  w
-                </div>
-              </td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td>
-                <div className={styles.buttons}>
-                  <Link href={`/dashboard/users/test`}>
-                    <button className={`${styles.button} ${styles.view}`}>
-                      View
-                    </button>
-                  </Link>
-                  <form >
-                    <input type="hidden" name="id"  />
-                    <button className={`${styles.button} ${styles.delete}`}>
-                      Delete
-                    </button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-    
+          <tr>
+            <td>
+              <div className={styles.user}>
+                <Image
+                  src={noAvater}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className={styles.userImage}
+                />
+                w
+              </div>
+            </td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td></td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href={`/dashboard/users/test`}>
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <form>
+                  <input type="hidden" name="id" />
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </td>
+          </tr>
         </tbody>
-        </table>
-        <Pagination  />
+      </table>
+      <Pagination />
     </div>
   );
 };

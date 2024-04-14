@@ -1,6 +1,5 @@
-
 import { User } from "./models";
-import { connectToDB } from './utils';
+import { connectToDB } from "./utils";
 
 export const fetchUsers = async () => {
   try {
@@ -10,8 +9,5 @@ export const fetchUsers = async () => {
     return users;
   } catch (err) {
     console.log(err);
-    
   }
 };
-
-

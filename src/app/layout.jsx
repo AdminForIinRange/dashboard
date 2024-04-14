@@ -1,5 +1,5 @@
 import { Inter } from "next/font/google";
-import "./ui/globals.css"; // Imported form ./ui/ This is within docs, I know it's weird and doesn't 
+import "./ui/globals.css"; // Imported form ./ui/ This is within docs, I know it's weird and doesn't
 //follow the proper React file structure, but let's assume this is 100% correct.
 
 const inter = Inter({ subsets: ["latin"] });

@@ -7,9 +7,11 @@ import { usePathname } from "next/navigation";
 const MenuLink = ({ title, path, icon }) => {
   const pathname = usePathname(); // use Client
 
-
   return (
-    <Link className={` ${styles.container} ${pathname === path && "active"}`} href={path}>
+    <Link
+      className={` ${styles.container} ${pathname === path && "active"}`}
+      href={path}
+    >
       {" "}
       {icon} {title}{" "}
     </Link>

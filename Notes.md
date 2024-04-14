@@ -24,11 +24,9 @@ Trying to understand the project, because I do not 100% get what he's trying to 
 If it's not page.js then the code will not work.
 However, the const export can be anything but it needs a capital word, common convention states Filename with a Capital Word + "page" in the end.
 
-
 ## Enforcing: Any route page need to be a page.jsx even if its a children
 
-even if teg url looks like /dashboard/products  at teh end of tehy day, dashboard and products are named page.jsx but the export inside and the folder route name is dashboard or products, howvere the jsx file is called page.jsx as its a page for teh folder route, this is not common convetion this is objective, menaing teh page wont render if the jsx file name is not Page.jsx
-
+even if teg url looks like /dashboard/products at teh end of tehy day, dashboard and products are named page.jsx but the export inside and the folder route name is dashboard or products, howvere the jsx file is called page.jsx as its a page for teh folder route, this is not common convetion this is objective, menaing teh page wont render if the jsx file name is not Page.jsx
 
 ## Taking {{children}} without Wrapping
 
@@ -47,7 +45,6 @@ import styles from "./sidebar.module.css"; // here a the import dir and name
 ## CSS naming conventions
 
 its allways, name of file . "module" . css
-
 
 ## Folder Placement conventions
 
@@ -126,12 +123,9 @@ console.log(pathname); // basically, i am able to access the path name ( the url
 
 ```
 
-
 ## Charts
 
-i have laready delt with recharts, because i have used it preveionly in trastcion project, with responsive and dyanimciu data not hard coded like prested in this project 
-
-
+i have laready delt with recharts, because i have used it preveionly in trastcion project, with responsive and dyanimciu data not hard coded like prested in this project
 
 ## using and Naming Slugs
 
@@ -139,5 +133,4 @@ The square brackets around the folder name, e.g., [slug], tell Next.js that this
 
 ## Password Issue
 
-every time you wnan use mongo create a new porject, thats not inveoled in yoru last project. when creating a  a new project your please est a password, you password is NOT bhattaraianjesh123  !!!!!!!!!!!!
-
+every time you wnan use mongo create a new porject, thats not inveoled in yoru last project. when creating a a new project your please est a password, you password is NOT bhattaraianjesh123 !!!!!!!!!!!!

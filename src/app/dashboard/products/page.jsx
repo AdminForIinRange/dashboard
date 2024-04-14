@@ -20,7 +20,7 @@ const ProductsPage = () => {
       <table className={styles.table}>
         <thead>
           <tr>
-          <td>Title</td>
+            <td>Title</td>
             <td>Description</td>
             <td>Price</td>
             <td>Created At</td>
@@ -29,44 +29,42 @@ const ProductsPage = () => {
           </tr>
         </thead>
         <tbody>
-        
-            <tr >
-              <td>
-                <div className={styles.product}>
-                  <Image
-                    src={noProduct}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.productImage}
-                  />
-                  w
-                </div>
-              </td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>a</td>
-              <td>
-                <div className={styles.buttons}>
-                  <Link href={`/dashboard/products/test`}>
-                    <button className={`${styles.button} ${styles.view}`}>
-                      View
-                    </button>
-                  </Link>
-                  <form >
-                    <input type="hidden" name="id"  />
-                    <button className={`${styles.button} ${styles.delete}`}>
-                      Delete
-                    </button>
-                  </form>
-                </div>
-              </td>
-            </tr>
-    
+          <tr>
+            <td>
+              <div className={styles.product}>
+                <Image
+                  src={noProduct}
+                  alt=""
+                  width={40}
+                  height={40}
+                  className={styles.productImage}
+                />
+                w
+              </div>
+            </td>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+            <td>a</td>
+            <td>
+              <div className={styles.buttons}>
+                <Link href={`/dashboard/products/test`}>
+                  <button className={`${styles.button} ${styles.view}`}>
+                    View
+                  </button>
+                </Link>
+                <form>
+                  <input type="hidden" name="id" />
+                  <button className={`${styles.button} ${styles.delete}`}>
+                    Delete
+                  </button>
+                </form>
+              </div>
+            </td>
+          </tr>
         </tbody>
-        </table>
-        <Pagination  />
+      </table>
+      <Pagination />
     </div>
   );
 };
