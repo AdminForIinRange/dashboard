@@ -115,3 +115,9 @@ console.log(pathname); // basically, i am able to access the path name ( the url
 
 ```
 
+
+## Charts
+
+i have laready delt with recharts, because i have used it preveionly in trastcion project, with responsive and dyanimciu data not hard coded like prested in this project 
+
+
