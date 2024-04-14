@@ -3,6 +3,7 @@ import Sidebar from "../ui/dashboard/sidebar/sidebar"; // from UI file inside te
 
 import Navbar from "../ui/dashboard/navbar/navbar";
 import styles from "../ui/dashboard/dashboard.module.css";
+import Footer from "../ui/footer/footer";
 
 const Layout = ({ children }) => {
   return (
@@ -13,6 +14,7 @@ const Layout = ({ children }) => {
       <div className={styles.content}>
         <Navbar />
         {children}
+        <Footer />
       </div>
     </div>
   );
