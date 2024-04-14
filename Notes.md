@@ -24,6 +24,12 @@ Trying to understand the project, because I do not 100% get what he's trying to 
 If it's not page.js then the code will not work.
 However, the const export can be anything but it needs a capital word, common convention states Filename with a Capital Word + "page" in the end.
 
+
+## Enforcing: Any route page need to be a page.jsx even if its a children
+
+even if teg url looks like /dashboard/products  at teh end of tehy day, dashboard and products are named page.jsx but the export inside and the folder route name is dashboard or products, howvere the jsx file is called page.jsx as its a page for teh folder route, this is not common convetion this is objective, menaing teh page wont render if the jsx file name is not Page.jsx
+
+
 ## Taking {{children}} without Wrapping
 
 If you have a file structure where both the page and layout components reside in the same folder, and the layout component is designed to wrap its children, any page component imported and rendered within that layout component will automatically become a child of the layout.
