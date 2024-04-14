@@ -127,3 +127,7 @@ console.log(pathname); // basically, i am able to access the path name ( the url
 i have laready delt with recharts, because i have used it preveionly in trastcion project, with responsive and dyanimciu data not hard coded like prested in this project 
 
 
+
+## using and Naming Slugs
+
+The square brackets around the folder name, e.g., [slug], tell Next.js that this is a dynamic route, and the content inside the brackets will be used as the route parameter. This allows you to create pages that can handle different URLs or "slugs" without having to define the routes manually. you can name the dynamic parameter inside the square brackets anything you want, such as [formId], [productSlug], [username], [slug] etc.
