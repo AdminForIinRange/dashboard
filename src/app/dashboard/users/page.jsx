@@ -4,6 +4,8 @@ import styles from "@/app/ui/dashboard/users/users.module.css";
 import Link from "next/link";
 import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
+import Pagination from "@/app/ui/dashboard/pagination/pagination";
+
 const UsersPage = () => {
   // a chldiren element within dashbaord app route
   return (
@@ -64,6 +66,7 @@ const UsersPage = () => {
     
         </tbody>
         </table>
+        <Pagination  />
     </div>
   );
 };

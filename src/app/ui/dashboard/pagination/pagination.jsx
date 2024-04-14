@@ -7,6 +7,7 @@ const Pagination = () => {
   return (
     <div className={styles.container}>
     <button
+    disabled
       className={styles.button}
 
     >
