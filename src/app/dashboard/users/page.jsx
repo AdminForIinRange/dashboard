@@ -6,10 +6,14 @@ import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
+const UsersPage = async ({ searchParams }) => { 
+    // searchParams is a buitin propagateServerField, like prams
 
-const UsersPage = async () => {
-  // a chldiren element within dashbaord app route
-  const users = await fetchUsers();
+
+ 
+  const q = searchParams?.q || ""
+
+  const users = await fetchUsers(q);
 
   return (
     <div className={styles.container}>

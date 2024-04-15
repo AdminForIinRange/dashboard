@@ -222,3 +222,146 @@ const UsersPage = async () => {
               </tr>
             )})}
 ```
+
+
+## Search with usePathname, useSearchParams, useRouter 
+
+
+```js
+
+// const SearchParams = useSearchParams();: Think of this as grabbing all the search parameters from the URL. Like if you were searching for something on Google, it would get all the words you typed in the search bar.
+
+
+//const pathname = usePathname();: This one gets the part of the web address after the domain name. So if you're on a website like "example.com/search", it would just get the "/search" part.
+
+//const { replace } = useRouter();: This line is like getting a special tool that helps you change the web address. With this tool, you can change the web address without making a new entry in your browser's history. 
+
+
+//const handleSearch = (e) => { ... }: This is like a plan for what to do when someone types something in a search box on your website. 
+
+
+//const parmas = new URLSearchParams(SearchParams);: This line makes a copy of all the search words you already typed in the search box. 
+
+
+//parmas.set("q", e.target.value);: This part updates the copy of the search words with whatever new thing you just typed in the search box.
+
+//replace(`${pathname}?${parmas}`);: Finally, this line uses the special tool to change the web address. It puts the new search words you typed into the address bar without making a new history entry.
+
+   const Search = ({ placeholder }) => {
+  const SearchParams = useSearchParams();
+  const pathname = usePathname();
+  const { replace } = useRouter();
+
+  const handleSearch = (e) => {
+    const parmas = new URLSearchParams(SearchParams);
+
+    parmas.set("q", e.target.value); // q is common convention 
+    replace(`${pathname}?${parmas}`);
+  };
+
+  console.log(pathname);
+  console.log(SearchParams);
+
+  return (
+    <div className={styles.container}>
+      <MdSearch />
+      <input
+        type="text"
+        placeholder={placeholder}
+        className={styles.input}
+        onChange={handleSearch}
+      />
+    </div>
+  );
+};
+
+
+
+```
+
+## User Search 
+
+```js
+
+
+// The URL query params are stored in the searchParams prop. 
+// The destructuring assignment ({searchParams}) is pulling the searchParams prop out of the props object that is automatically passed into the function.
+
+// The query is stored in the "q" key of the searchParams object. 
+// The line below is checking if the "q" key exists in the searchParams object and if it does it assigns its value to the variable q. If it doesn't exist it just assigns an empty string to it.
+
+// The await keyword is used to wait for the promise to resolve before continuing. It's like doing a callback, but easier to read.
+
+// The fetchUsers function is importing a function from another file. It's basically like doing a function call, but instead of calling the function directly, you're calling a function that is defined in another file.
+
+// The fetchUsers function is being called with one argument, q. The value of q is whatever was in the "q" key of the searchParams object. If the "q" key didn't exist then an empty string would be passed in instead.
+
+// The users variable is being assigned the return value of the fetchUsers function. The fetchUsers function is returning a promise, so the variable users is getting assigned the resolved value of the promise (which is the array of users).
+
+const UsersPage = async ({searchParams}) => {    // searchParams is a buitin propagateServerField, like prams
+
+  const q = SearchParams?.q || ""
+
+  const users = await fetchUsers(q);
+
+
+```
+
+
+
+## Regex 
+
+```js
+
+
+// export const fetchUsers = async (q, "i") => { ... }: This line exports a function named fetchUsers. It takes two parameters: q (presumably a search query) and "i" (likely a flag for case-insensitive search). The function is declared as an asynchronous function, indicated by the async keyword, which means it can use await to handle promises.
+
+// const regex = new RegExp(q, "i"): This line creates a regular expression object using the RegExp constructor. The q parameter is passed as the pattern to search for, and the "i" parameter is passed as the flags. In regular expressions, the "i" flag means the search will be case-insensitive.
+
+
+import { User } from "./models";
+import { connectToDB } from "./utils";
+
+export const fetchUsers = async (q) => {
+
+  const regex = new RegExp(q, "i") // the "i" makes the search case insensitive (make it lowercase no matter what)
+  try {
+    connectToDB();
+
+    const users = await User.find({username: {$regex: regex}});
+    return users;
+  } catch (err) {
+    console.log(err);
+    throw new Error(Error);
+  }
+};
+
+
+
+```
+
+## Updated search
+
+```js
+
+const Search = ({ placeholder }) => {
+  const searchParams = useSearchParams();
+  const { replace } = useRouter();
+  const pathname = usePathname();
+
+  const handleSearch = (e) => {
+    
+    const params = new URLSearchParams(searchParams);
+
+    if (e.target.value) {
+      e.target.value > 3 &&  params.set("q", e.target.value);
+
+    } else {
+      params.delete("q");
+    }
+    replace(`${pathname}?${params}`);
+  };
+
+ return (
+
+```
