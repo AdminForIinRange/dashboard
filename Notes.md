@@ -136,3 +136,62 @@ The square brackets around the folder name, e.g., [slug], tell Next.js that this
 every time you wnan use mongo create a new porject, thats not inveoled in yoru last project. when creating a a new project your please est a password, you password is NOT bhattaraianjesh123 !!!!!!!!!!!!
 
 I made a big mistake by not creating and establishing a password, and I thought it would be the same as 'bhattaraianjesh123'.
+
+
+## Fetcthing teh data form Mongo collection's 
+
+```js
+
+// data.js
+
+import { User } from "./models"; 
+import { connectToDB } from "./utils";
+
+export const fetchUsers = async () => {
+  try {
+    connectToDB();
+
+    const users = await User.find();
+    return users;
+  } catch (err) {
+    console.log(err);
+    throw new Error(Error);
+  }
+};
+
+
+// UsersPage.jsx
+ 
+import { fetchUsers } from "@/app/lib/data";
+ 
+const UsersPage = async () => {
+  // a chldiren element within dashbaord app route
+  const users = await fetchUsers(); 
+  console.log(users);
+
+
+// the console log output
+
+
+  {
+    _id: new ObjectId('661c9261058876f71d5949c7'),
+    username: 'ike',
+    email: 'ike@email.com',
+    password: '123456',
+    img: 'https://images.pexels.com/photos/20726113/pexels-photo-20726113/free-photo-of-a-view-of-the-city-of-siena-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    isAdmin: false,
+    isActive: true
+  },
+  {
+    _id: new ObjectId('661c927c058876f71d5949c8'),
+    username: 'whyomi',
+    email: 'whyomi@email.com',
+    password: '123456',
+    img: 'https://images.pexels.com/photos/20726113/pexels-photo-20726113/free-photo-of-a-view-of-the-city-of-siena-italy.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1',
+    isAdmin: false,
+    isActive: true
+  }
+]
+
+
+```

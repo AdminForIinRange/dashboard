@@ -9,7 +9,7 @@ import { fetchUsers } from "@/app/lib/data";
 
 const UsersPage = async () => {
   // a chldiren element within dashbaord app route
-  const users = await fetchUsers();
+  const users = await fetchUsers(); 
   console.log(users);
 
   return (
