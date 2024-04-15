@@ -138,7 +138,7 @@ every time you wnan use mongo create a new porject, thats not inveoled in yoru l
 I made a big mistake by not creating and establishing a password, and I thought it would be the same as 'bhattaraianjesh123'.
 
 
-## Fetcthing teh data form Mongo collection's 
+## Fetcthing the data form Mongo collection's 
 
 ```js
 
@@ -194,4 +194,21 @@ const UsersPage = async () => {
 ]
 
 
+```
+
+## Mapping Fetch directly 
+
+```js
+  const users = await fetchUsers();
+
+// ...
+
+
+{users.map((user) => {
+            return (
+              <tr key={user.id}>
+                <td>
+                </td>
+                </tr>
+            )})}
 ```
