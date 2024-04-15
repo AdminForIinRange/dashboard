@@ -207,8 +207,18 @@ const UsersPage = async () => {
 {users.map((user) => {
             return (
               <tr key={user.id}>
-                <td>
-                </td>
-                </tr>
+              <td>
+                <div className={styles.user}>
+                  <Image
+                    src={user.img || noAvater}
+                    alt=""
+                    width={40}
+                    height={40}
+                    className={styles.userImage}
+                  />
+                  {user.username}
+                </div>
+              </td>
+              </tr>
             )})}
 ```
