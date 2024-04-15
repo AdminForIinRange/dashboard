@@ -134,3 +134,5 @@ The square brackets around the folder name, e.g., [slug], tell Next.js that this
 ## Password Issue
 
 every time you wnan use mongo create a new porject, thats not inveoled in yoru last project. when creating a a new project your please est a password, you password is NOT bhattaraianjesh123 !!!!!!!!!!!!
+
+I made a big mistake by not creating and establishing a password, and I thought it would be the same as 'bhattaraianjesh123'.
