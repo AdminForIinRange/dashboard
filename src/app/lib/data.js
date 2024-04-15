@@ -9,5 +9,6 @@ export const fetchUsers = async () => {
     return users;
   } catch (err) {
     console.log(err);
+    throw new Error(Error);
   }
 };
