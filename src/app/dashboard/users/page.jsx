@@ -6,14 +6,12 @@ import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
-const UsersPage = async ({ searchParams }) => { 
-    // searchParams is a buitin propagateServerField, like prams
+const UsersPage = async ({ searchParams }) => {
+  // searchParams is a buitin propagateServerField, like prams
 
-
- 
-  const q = searchParams?.q || ""
-  const page = searchParams?.page || "1"
-  const users = await fetchUsers(q, page);
+  const q = searchParams?.q || "";
+  const page = searchParams?.page || "1";
+  const { users, count } = await fetchUsers(q, page);
 
   return (
     <div className={styles.container}>
@@ -36,7 +34,7 @@ const UsersPage = async ({ searchParams }) => {
           </tr>
         </thead>
         <tbody>
-        {users.map((user) => (
+          {users.map((user) => (
             <tr key={user.id}>
               <td>
                 <div className={styles.user}>
@@ -61,8 +59,8 @@ const UsersPage = async ({ searchParams }) => {
                       View
                     </button>
                   </Link>
-                  <form >
-                    <input type="hidden" name="id" value={(user.id)} />
+                  <form>
+                    <input type="hidden" name="id" value={user.id} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>
@@ -73,7 +71,7 @@ const UsersPage = async ({ searchParams }) => {
           ))}
         </tbody>
       </table>
-      <Pagination />
+      <Pagination count={count} />
     </div>
   );
 };

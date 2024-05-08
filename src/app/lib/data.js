@@ -8,11 +8,11 @@ export const fetchUsers = async (q, page) => {
 
   try {
     connectToDB();
-
+    const count = await User.find({ username: { $regex: regex } }).count();
     const users = await User.find({ username: { $regex: regex } })
       .limit(ITEM_PER_PAGE)
       .skip((page - 1) * ITEM_PER_PAGE); // this is where the magic happens, we are using the skip and limit methods to paginate the results
-    return users;
+    return { users, count };
   } catch (err) {
     console.log(err);
     throw new Error(Error);

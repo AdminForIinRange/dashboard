@@ -137,14 +137,13 @@ every time you wnan use mongo create a new porject, thats not inveoled in yoru l
 
 I made a big mistake by not creating and establishing a password, and I thought it would be the same as 'bhattaraianjesh123'.
 
-
-## Fetcthing the data form Mongo collection's 
+## Fetcthing the data form Mongo collection's
 
 ```js
 
 // data.js
 
-import { User } from "./models"; 
+import { User } from "./models";
 import { connectToDB } from "./utils";
 
 export const fetchUsers = async () => {
@@ -161,12 +160,12 @@ export const fetchUsers = async () => {
 
 
 // UsersPage.jsx
- 
+
 import { fetchUsers } from "@/app/lib/data";
- 
+
 const UsersPage = async () => {
   // a chldiren element within dashbaord app route
-  const users = await fetchUsers(); 
+  const users = await fetchUsers();
   console.log(users);
 
 
@@ -196,58 +195,53 @@ const UsersPage = async () => {
 
 ```
 
-## Mapping Fetch directly 
+## Mapping Fetch directly
 
 ```js
-  const users = await fetchUsers();
+const users = await fetchUsers();
 
 // ...
 
-
-{users.map((user) => {
-            return (
-              <tr key={user.id}>
-              <td>
-                <div className={styles.user}>
-                  <Image
-                    src={user.img || noAvater}
-                    alt=""
-                    width={40}
-                    height={40}
-                    className={styles.userImage}
-                  />
-                  {user.username}
-                </div>
-              </td>
-              </tr>
-            )})}
+{
+  users.map((user) => {
+    return (
+      <tr key={user.id}>
+        <td>
+          <div className={styles.user}>
+            <Image
+              src={user.img || noAvater}
+              alt=""
+              width={40}
+              height={40}
+              className={styles.userImage}
+            />
+            {user.username}
+          </div>
+        </td>
+      </tr>
+    );
+  });
+}
 ```
 
-
-## Search with usePathname, useSearchParams, useRouter 
-
+## Search with usePathname, useSearchParams, useRouter
 
 ```js
-
 // const SearchParams = useSearchParams();: Think of this as grabbing all the search parameters from the URL. Like if you were searching for something on Google, it would get all the words you typed in the search bar.
-
 
 //const pathname = usePathname();: This one gets the part of the web address after the domain name. So if you're on a website like "example.com/search", it would just get the "/search" part.
 
-//const { replace } = useRouter();: This line is like getting a special tool that helps you change the web address. With this tool, you can change the web address without making a new entry in your browser's history. 
+//const { replace } = useRouter();: This line is like getting a special tool that helps you change the web address. With this tool, you can change the web address without making a new entry in your browser's history.
 
+//const handleSearch = (e) => { ... }: This is like a plan for what to do when someone types something in a search box on your website.
 
-//const handleSearch = (e) => { ... }: This is like a plan for what to do when someone types something in a search box on your website. 
-
-
-//const parmas = new URLSearchParams(SearchParams);: This line makes a copy of all the search words you already typed in the search box. 
-
+//const parmas = new URLSearchParams(SearchParams);: This line makes a copy of all the search words you already typed in the search box.
 
 //parmas.set("q", e.target.value);: This part updates the copy of the search words with whatever new thing you just typed in the search box.
 
 //replace(`${pathname}?${parmas}`);: Finally, this line uses the special tool to change the web address. It puts the new search words you typed into the address bar without making a new history entry.
 
-   const Search = ({ placeholder }) => {
+const Search = ({ placeholder }) => {
   const SearchParams = useSearchParams();
   const pathname = usePathname();
   const { replace } = useRouter();
@@ -255,7 +249,7 @@ const UsersPage = async () => {
   const handleSearch = (e) => {
     const parmas = new URLSearchParams(SearchParams);
 
-    parmas.set("q", e.target.value); // q is common convention 
+    parmas.set("q", e.target.value); // q is common convention
     replace(`${pathname}?${parmas}`);
   };
 
@@ -274,20 +268,17 @@ const UsersPage = async () => {
     </div>
   );
 };
-
-
-
 ```
 
-## User Search 
+## User Search
 
 ```js
 
 
-// The URL query params are stored in the searchParams prop. 
+// The URL query params are stored in the searchParams prop.
 // The destructuring assignment ({searchParams}) is pulling the searchParams prop out of the props object that is automatically passed into the function.
 
-// The query is stored in the "q" key of the searchParams object. 
+// The query is stored in the "q" key of the searchParams object.
 // The line below is checking if the "q" key exists in the searchParams object and if it does it assigns its value to the variable q. If it doesn't exist it just assigns an empty string to it.
 
 // The await keyword is used to wait for the promise to resolve before continuing. It's like doing a callback, but easier to read.
@@ -307,37 +298,28 @@ const UsersPage = async ({searchParams}) => {    // searchParams is a buitin pro
 
 ```
 
-
-
-## Regex 
+## Regex
 
 ```js
-
-
 // export const fetchUsers = async (q, "i") => { ... }: This line exports a function named fetchUsers. It takes two parameters: q (presumably a search query) and "i" (likely a flag for case-insensitive search). The function is declared as an asynchronous function, indicated by the async keyword, which means it can use await to handle promises.
 
 // const regex = new RegExp(q, "i"): This line creates a regular expression object using the RegExp constructor. The q parameter is passed as the pattern to search for, and the "i" parameter is passed as the flags. In regular expressions, the "i" flag means the search will be case-insensitive.
-
 
 import { User } from "./models";
 import { connectToDB } from "./utils";
 
 export const fetchUsers = async (q) => {
-
-  const regex = new RegExp(q, "i") // the "i" makes the search case insensitive (make it lowercase no matter what)
+  const regex = new RegExp(q, "i"); // the "i" makes the search case insensitive (make it lowercase no matter what)
   try {
     connectToDB();
 
-    const users = await User.find({username: {$regex: regex}});
+    const users = await User.find({ username: { $regex: regex } });
     return users;
   } catch (err) {
     console.log(err);
     throw new Error(Error);
   }
 };
-
-
-
 ```
 
 ## Updated search
@@ -350,7 +332,7 @@ const Search = ({ placeholder }) => {
   const pathname = usePathname();
 
   const handleSearch = (e) => {
-    
+
     const params = new URLSearchParams(searchParams);
 
     if (e.target.value) {
@@ -366,32 +348,21 @@ const Search = ({ placeholder }) => {
 
 ```
 
-
-
 ## CreatedAt
 
-
-```js 
-
+```js
 // when fetching createdAt from mongoDB its impornet to apply toString()
 <td>{user.createdAt?.toString().slice(4, 16)}</td>
-
 ```
-
-
 
 ## useDebouncedCallback from use-debounce - debounces the function
 
-The debounce function is used to limit the rate at which a function can be called. It delays the invocation of the function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked. 
+The debounce function is used to limit the rate at which a function can be called. It delays the invocation of the function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked.
 
 So if you type something in the search box, the function will be called after 300ms, and not immediately. This is useful for search boxes, because you don't want to make a fetch request to the server every time the user types something. Instead, you want to wait for the user to stop typing for a brief moment, and then make the request.
 
 ```js
-
-  const handleSearch = useDebouncedCallback((e) => {
-    
-//...
-  },300);
-
-
+const handleSearch = useDebouncedCallback((e) => {
+  //...
+}, 300);
 ```
