@@ -16,12 +16,17 @@ const Pagination = ({ count }) => {
   const hasPrev = ITEM_PER_PAGE * (parseInt(page) - 1) > 0;
   const hasNext = ITEM_PER_PAGE * (parseInt(page) - 1) + ITEM_PER_PAGE < count;
 
+
+  const handleChange = (type) => {
+   type === "prev" ? prams.set("page", parseInt(page) - 1) : prams.set("page", parseInt(page) + 1);
+    replace(`${pathname}?${prams}`);
+  }
   return (
     <div className={styles.container}>
-      <button className={styles.button} disabled={!hasPrev}>
+      <button className={styles.button} disabled={!hasPrev} onClick={() => handleChange("prev")}>
         Previous
       </button>
-      <button className={styles.button} disabled={!hasNext}>
+      <button className={styles.button} disabled={!hasNext} onClick={() => handleChange("next")} >
         Next
       </button>
     </div>
