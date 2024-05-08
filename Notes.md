@@ -377,3 +377,21 @@ const Search = ({ placeholder }) => {
 <td>{user.createdAt?.toString().slice(4, 16)}</td>
 
 ```
+
+
+
+## useDebouncedCallback from use-debounce - debounces the function
+
+The debounce function is used to limit the rate at which a function can be called. It delays the invocation of the function until after `wait` milliseconds have elapsed since the last time the debounced function was invoked. 
+
+So if you type something in the search box, the function will be called after 300ms, and not immediately. This is useful for search boxes, because you don't want to make a fetch request to the server every time the user types something. Instead, you want to wait for the user to stop typing for a brief moment, and then make the request.
+
+```js
+
+  const handleSearch = useDebouncedCallback((e) => {
+    
+//...
+  },300);
+
+
+```
