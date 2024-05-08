@@ -365,3 +365,15 @@ const Search = ({ placeholder }) => {
  return (
 
 ```
+
+
+
+## CreatedAt
+
+
+```js 
+
+// when fetching createdAt from mongoDB its impornet to apply toString()
+<td>{user.createdAt?.toString().slice(4, 16)}</td>
+
+```
