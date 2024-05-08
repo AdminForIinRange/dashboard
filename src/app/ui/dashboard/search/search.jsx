@@ -15,7 +15,7 @@ const Search = ({ placeholder }) => {
     const params = new URLSearchParams(searchParams);
 
     if (e.target.value) {
-      e.target.value.length > 3 &&  params.set("q", e.target.value);
+      e.target.value.length > 0 &&  params.set("q", e.target.value);
 
     } else {
       params.delete("q");
