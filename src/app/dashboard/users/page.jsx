@@ -6,6 +6,7 @@ import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
 import Pagination from "@/app/ui/dashboard/pagination/pagination";
 import { fetchUsers } from "@/app/lib/data";
+import { deleteUser } from "@/app/lib/actions";
 const UsersPage = async ({ searchParams }) => {
   // searchParams is a buitin propagateServerField, like prams
 
@@ -59,8 +60,8 @@ const UsersPage = async ({ searchParams }) => {
                       View
                     </button>
                   </Link>
-                  <form>
-                    <input type="hidden" name="id" value={user.id} />
+                  <form action={deleteUser}>
+                    <input type="hidden" name="id" value={(user.id)} />
                     <button className={`${styles.button} ${styles.delete}`}>
                       Delete
                     </button>

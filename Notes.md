@@ -411,3 +411,22 @@ export const addUser = async (formData)=>{
 
 
 ```
+
+## Simple way of grabing user id from mongodb
+
+```js
+export const fetchUser = async (id) => {
+  console.log(id);
+  try {
+    connectToDB();
+    const user = await User.findById(id);
+    return user;
+  } catch (err) {
+    console.log(err);
+    throw new Error("Failed to fetch user!");
+  }
+};
+
+
+
+```

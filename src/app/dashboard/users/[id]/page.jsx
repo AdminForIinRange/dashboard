@@ -1,18 +1,24 @@
 import styles from "@/app/ui/dashboard/users/singleUser/singleUser.module.css";
 import Image from "next/image";
 import noAvater from "@/app/public/noavatar.png";
+import { fetchUser } from "@/app/lib/data";
+import { updateUser } from "@/app/lib/actions";
+
 const SingleUserPage = async ({ params }) => {
   const { id } = params;
+
+  const { user } = await fetchUser(id);
 
   return (
     <div className={styles.container}>
       <div className={styles.infoContainer}>
         <div className={styles.imgContainer}>
-          <Image src={noAvater} alt="" fill />
+          <Image src={user.img || noAvater} alt="" fill />
         </div>
+        {user.name}
       </div>
       <div className={styles.formContainer}>
-        <form className={styles.form}>
+        <form action={updateUser} className={styles.form}>
           <input type="hidden" name="id" />
           <label>Username</label>
           <input type="text" name="username" />
