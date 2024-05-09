@@ -2,6 +2,8 @@
 
 import { revalidatePath } from "next/cache";
 import { redirect } from "next/navigation";
+import { connectToDB } from "./utils";
+import { User } from "./models";
 
 export const addUser = async (formData)=>{
 

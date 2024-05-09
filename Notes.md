@@ -366,3 +366,48 @@ const handleSearch = useDebouncedCallback((e) => {
   //...
 }, 300);
 ```
+
+
+
+## SuperEasy way to transmit data to mongoDB
+
+```js
+
+
+
+"use server"
+
+import { revalidatePath } from "next/cache";
+import { redirect } from "next/navigation";
+import { connectToDB } from "./utils";
+import { User } from "./models";
+
+export const addUser = async (formData)=>{
+
+    const { username, email, password, phone, address, isAdmin, isActive } =
+    Object.fromEntries(formData); // formData is transformed into an object
+
+    try {
+        connectToDB();
+        const newUser = new User({
+            username,
+            email,
+            password,
+            phone,
+            address,
+            isAdmin,
+            isActive
+            
+        })
+
+        await newUser.save();
+    } catch (err) {
+        console.log(err);
+    }
+
+    revalidatePath('/dashboard/users')// acts like a refresh 
+    redirect('/dashboard/users')
+}
+
+
+```
