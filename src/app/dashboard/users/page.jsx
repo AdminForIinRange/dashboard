@@ -55,7 +55,7 @@ const UsersPage = async ({ searchParams }) => {
               <td>{user.isActive ? "active" : "passive"}</td>
               <td>
                 <div className={styles.buttons}>
-                  <Link href={`/dashboard/users/${user.id}`}>
+                  <Link href={`/dashboard/users/${user.id}`}> He fetches all the users and maps them. Then, he creates an <a> tag with the id of each user (from the fetch remember). This id is set as a URL parameter. So, when users click it, they get sent to the dynamic slug, called id (it can be named anything). When they arrive there, he just grabs the last section of the URL as a parameter and uses that to apply changes or create new users because he is an admin.
                     <button className={`${styles.button} ${styles.view}`}>
                       View
                     </button>
